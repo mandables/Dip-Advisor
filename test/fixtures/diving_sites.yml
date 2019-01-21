@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country_id: 
+  review_id: 
+  depth,: MyString
+  city: MyString
+
+two:
+  country_id: 
+  review_id: 
+  depth,: MyString
+  city: MyString

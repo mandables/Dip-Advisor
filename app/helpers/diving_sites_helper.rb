@@ -1,0 +1,2 @@
+module DivingSitesHelper
+end
