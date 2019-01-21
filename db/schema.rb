@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_114645) do
+ActiveRecord::Schema.define(version: 2019_01_21_144600) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 2019_01_21_114645) do
   create_table "divingsites", force: :cascade do |t|
     t.string "name"
     t.integer "country_id"
-    t.integer "depth"
-    t.string "city"
+    t.integer "max_depth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string "content"
+    t.integer "rating"
     t.integer "user_id"
     t.integer "divingsite_id"
     t.datetime "created_at", null: false
