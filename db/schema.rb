@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_144600) do
+ActiveRecord::Schema.define(version: 2019_01_21_145626) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2019_01_21_144600) do
     t.integer "max_depth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "divesiteimage_file_name"
+    t.string "divesiteimage_content_type"
+    t.integer "divesiteimage_file_size"
+    t.datetime "divesiteimage_updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|

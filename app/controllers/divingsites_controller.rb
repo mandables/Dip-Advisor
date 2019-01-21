@@ -3,12 +3,13 @@ class DivingsitesController < ApplicationController
   def show
      @divingsite = Divingsite.find(params[:id])
   end
-  
+
   def new
     @divingsite = Divingsite.new
   end
 
   def create
+
     @divingsite = Divingsite.new(divingsite_params)
     if @divingsite.valid?
       @divingsite.save
@@ -21,6 +22,6 @@ class DivingsitesController < ApplicationController
   private
 
   def divingsite_params
-    params.require(:divingsite).permit(:name, :country_id)
+    params.require(:divingsite).permit(:name, :country_id, :divesiteimage)
   end
 end
