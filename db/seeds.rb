@@ -9,11 +9,20 @@
 User.create(username: "Tim", password_digest: "password")
 User.create(username: "Mani", password_digest: "passport")
 
-Country.create(name: "Peru")
+Country.create(name: "Indonesia")
+Country.create(name: "Thailand")
+Country.create(name: "Malaysia")
 
-Divingsite.create(name: "Plunge City", country_id: 1, depth: 100, city: "Lima")
+Divingsite.create(name: "Sipadan Island", country_id: 3, max_depth: 30)
+Divingsite.create(name: "Lankayan Island", country_id: 3, max_depth: 22)
+Divingsite.create(name: "Layang-Layang Island", country_id: 3, max_depth: 25)
+Divingsite.create(name: "Sail Rock", country_id: 2, max_depth: 23)
+Divingsite.create(name: "Chumphon Pinnacle", country_id: 2, max_depth: 19)
+Divingsite.create(name: "Komodo Island", country_id: 3, max_depth: 30)
+Divingsite.create(name: "Raja Ampat", country_id: 3, max_depth: 12)
 
-Review.create(content: "It was awesome", user_id: 1, divingsite_id: 1)
-
-Upvote.create(user_id: 1, review_id: 1)
-Upvote.create(user_id: 2, review_id: 1)
+#
+# Review.create(content: "It was awesome", user_id: 1, divingsite_id: 1)
+#
+# Upvote.create(user_id: 1, review_id: 1)
+# Upvote.create(user_id: 2, review_id: 1)
