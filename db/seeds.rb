@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "Tim", password_digest: "password")
-User.create(username: "Mani", password_digest: "passport")
+# User.create(username: "Tim", password_digest: "password")
+# User.create(username: "Mani", password_digest: "passport")
+
 
 Country.create(name: "Indonesia")
 Country.create(name: "Thailand")
@@ -21,8 +22,3 @@ Divingsite.create(name: "Chumphon Pinnacle", country_id: 2, max_depth: 19)
 Divingsite.create(name: "Komodo Island", country_id: 3, max_depth: 30)
 Divingsite.create(name: "Raja Ampat", country_id: 3, max_depth: 12)
 
-#
-# Review.create(content: "It was awesome", user_id: 1, divingsite_id: 1)
-#
-# Upvote.create(user_id: 1, review_id: 1)
-# Upvote.create(user_id: 2, review_id: 1)

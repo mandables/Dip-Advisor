@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_145626) do
     t.string "name"
     t.integer "country_id"
     t.integer "max_depth"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "divesiteimage_file_name"
