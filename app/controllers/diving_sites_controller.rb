@@ -1,2 +1,0 @@
-class DivingSitesController < ApplicationController
-end

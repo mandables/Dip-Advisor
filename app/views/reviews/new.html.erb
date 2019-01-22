@@ -1,0 +1,6 @@
+<h1>Add a New Review</h1>
+<%= form_for @review, url: divingsite_reviews_path(@divingsite)  do |f| %>
+  <%= f.label "Review" %>
+  <%= f.text_field :content %>
+  <%= f.submit "Submit Review"%>
+<% end %>
