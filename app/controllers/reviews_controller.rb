@@ -7,17 +7,10 @@ class ReviewsController < ApplicationController
   def create
     @divingsite = Divingsite.find(params[:divingsite_id])
     @review = @divingsite.reviews.create(review_params)
+    byebug
     @review.divingsite_id = @divingsite.id
     @review.user = User.find_by(username: current_user)
     @review.save
-    byebug
-
-    # if @review.valid?
-    #   @review.save
-    #   redirect_to @review
-    # else
-    #   render 'new'
-    # end
     redirect_to @divingsite
   end
 
