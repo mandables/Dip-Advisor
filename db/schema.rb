@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_114645) do
   create_table "divingsites", force: :cascade do |t|
     t.string "name"
     t.integer "country_id"
-    t.integer "depth"
+    t.integer "max_depth"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_114645) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "content"
+    t.integer "rating"
     t.integer "user_id"
     t.integer "divingsite_id"
     t.datetime "created_at", null: false
