@@ -1,15 +1,16 @@
 class ReviewsController < ApplicationController
-
   def new
     @divingsite = Divingsite.find(params[:divingsite_id])
     @review = Review.new
   end
 
   def create
-    byebug
     @divingsite = Divingsite.find(params[:divingsite_id])
-    @review =  @divingsite.reviews.create(review_params)
+    @review = @divingsite.reviews.create(review_params)
     @review.divingsite_id = @divingsite.id
+    @review.user = User.find_by(username: current_user)
+    @review.save
+    byebug
 
     # if @review.valid?
     #   @review.save
@@ -17,16 +18,23 @@ class ReviewsController < ApplicationController
     # else
     #   render 'new'
     # end
-     redirect_to @review
+    redirect_to @divingsite
+  end
+
+  def upvote
+
+    @review = Review.find(params[:review_id])
+    @review.upvote_by User.find_by(username: current_user)
+    redirect_to @review.divingsite
   end
 
   private
+
   def review_params
     params.require(:review).permit(:content)
   end
 
   def set_divingsite
-      @divingsite = Divingsite.find(params[:divingsite_id])
-    end
-
+    @divingsite = Divingsite.find(params[:divingsite_id])
+  end
 end

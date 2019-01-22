@@ -1,7 +1,6 @@
 <h1>Add a New Review</h1>
-<%= form_for @review  do |f| %>
+<%= form_for @review, url: divingsite_reviews_path(@divingsite)  do |f| %>
   <%= f.label "Review" %>
   <%= f.text_field :content %>
-  <%=hidden_field_tag :divingsite_id, @divingsite.id%>
   <%= f.submit "Submit Review"%>
 <% end %>

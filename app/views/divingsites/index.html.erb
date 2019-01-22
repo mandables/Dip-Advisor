@@ -1,0 +1,11 @@
+<% @divingsites.each do |site| %>
+<%= site.name %>
+
+    <%= link_to divingsite_like_path(site), class: "like", method: :put do %>
+    <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+    <span class="badge"> <%= site.get_upvotes.size %> </span>
+    </button>
+    <% end %> 
+
+<% end %>
