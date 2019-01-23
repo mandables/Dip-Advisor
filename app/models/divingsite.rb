@@ -11,14 +11,18 @@ class Divingsite < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
-  def averge_review
-    self.reviews.rating
+  def rating_average
+    review_ratings = []
+    self.reviews.each do |review|
+      review_ratings << review.rating
+    end
+    review_ratings.inject(0.0) { |sum, el| sum + el } / review_ratings.size
   end
 
   def self.top
     Divingsite.all.max_by do |divingsite|
-      divingsite.average_review
+      divingsite.rating_average
+    end
   end
-end
 
 end
