@@ -1,0 +1,5 @@
+<% @divingsites.each do |d|%>
+<li>
+<%= link_to d.name, divingsite_path(d) %>
+</li>
+<% end %>
