@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :upvotes
   resources :countries
+  resources :divingsites
   resources :divingsites do
     put "like" => "divingsites#upvote"
   end
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
     resources :divingsites, :only => [:index, :show] do
       resources :reviews, :only => [:new, :create] do
         put "like" => "reviews#upvote"
-      
+
     end
   end
 end

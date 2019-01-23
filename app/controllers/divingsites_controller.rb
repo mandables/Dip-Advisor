@@ -5,7 +5,11 @@ class DivingsitesController < ApplicationController
   end
 
   def index
-    @divingsites = Divingsite.all
+    if params[:search]
+      @divingsites = Divingsite.search(params[:search]).order("created_at DESC")
+    else
+      @divingsites = Divingsite.all
+    end
   end
 
   def new

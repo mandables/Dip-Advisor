@@ -1,11 +1,12 @@
 <% @divingsites.each do |site| %>
-<%= site.name %>
-
-    <%= link_to divingsite_like_path(site), class: "like", method: :put do %>
-    <button type="button" class="btn btn-info" aria-label="Left Align">
+<ul>
+<%= link_to site.name, divingsite_path(site) %>
+<%= image_tag site.divesiteimage.url, width: 200, :crop => "pad" %>
+    </ul>
+    <!-- link_to divingsite_like_path(site), class: "like", method: :put do  -->
+    <!-- <button type="button" class="btn btn-info" aria-label="Left Align">
     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-    <span class="badge"> <%= site.get_upvotes.size %> </span>
-    </button>
-    <% end %> 
-
+    <span class="badge">  site.get_upvotes.size </span>
+    </button> -->
+      <!-- end  -->
 <% end %>
