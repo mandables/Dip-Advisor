@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_095355) do
+ActiveRecord::Schema.define(version: 2019_01_24_161924) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,10 @@ ActiveRecord::Schema.define(version: 2019_01_22_095355) do
     t.string "qualification"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profilepic_file_name"
+    t.string "profilepic_content_type"
+    t.integer "profilepic_file_size"
+    t.datetime "profilepic_updated_at"
   end
 
   create_table "votes", force: :cascade do |t|
