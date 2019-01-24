@@ -1,5 +1,14 @@
-<% @divingsites.each do |d|%>
-<li>
-<%= link_to d.name, divingsite_path(d) %>
-</li>
-<% end %>
+
+
+<div class="card-columns">
+<% @divingsites.each do |site| %>
+
+        <div class="card" style="width: 18rem;">
+
+        <div class="card-body, index-img">
+        <h5 class="card-title"><%= link_to site.name, divingsite_path(site) %></h5>
+        <%= image_tag site.divesiteimage.url, width: 200, :crop => "pad", class: "card-img-top"%>
+             </div>
+          </div>
+          <br>
+          <% end %>

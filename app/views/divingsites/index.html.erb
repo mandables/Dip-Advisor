@@ -2,18 +2,31 @@
 <%=link_to "Highest Rated Divingsite",  Divingsite.top %>
 <%= link_to "Order Alphabetically", divingsites_path(order: 'alphabetically') %>
 <%= link_to "Top 5", divingsites_path(order: 'rating') %>
+<br> <br>
 
+  <div class="card-columns">
 <% @divingsites.each do |site| %>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-  <% @divingsites.each do |site| %>
 
-<ul>
-<%= link_to site.name, divingsite_path(site) %>
-<%= image_tag site.divesiteimage.url, width: 200, :crop => "pad" %>
-    </ul>
+  
+   
+
+
+
+        <div class="card" style="width: 18rem;">
+
+        <div class="card-body, index-img">
+        <h5 class="card-title"><%= link_to site.name, divingsite_path(site) %></h5>
+        <%= image_tag site.divesiteimage.url, width: 200, :crop => "pad", class: "card-img-top"%>
+             </div>
+          </div>
+          <br>
+        <%# </div> %>
+     
+
+
+
+   
     <!-- link_to divingsite_like_path(site), class: "like", method: :put do  -->
     <!-- <button type="button" class="btn btn-info" aria-label="Left Align">
     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -21,6 +34,8 @@
     </button> -->
       <!-- end  -->
 <% end %>
+</div>
+<%# </div>
     </div>
   </div>
- </div>
+ </div> %>
