@@ -1,5 +1,5 @@
 <div class="form-group" style="margin-left: 30px; width: 400px;"><h1>Add a New Dive Site</h1>
-<%= form_for @divingsite , html: { multipart: true } do |f| %>
+<%= form_for @divingsite , html: { multipart: true, class: "links" } do |f| %>
   <%= f.label "Name" %>
   <%= f.text_field :name %>
   <%= f.label "Max Depth:" %>
