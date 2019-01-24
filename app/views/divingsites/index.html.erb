@@ -1,9 +1,16 @@
+
 <h1><%=link_to "Highest Rated Divingsite",  Divingsite.top %></h1><br>
 
 <%= link_to "Order Alphabetically", divingsites_path(order: 'alphabetically') %><br>
 <%= link_to "Top 5", divingsites_path(order: 'rating') %>
 
 <% @divingsites.each do |site| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+  <% @divingsites.each do |site| %>
+
 <ul>
 <%= link_to site.name, divingsite_path(site) %>
 <%= image_tag site.divesiteimage.url, width: 200, :crop => "pad" %>
@@ -15,3 +22,6 @@
     </button> -->
       <!-- end  -->
 <% end %>
+    </div>
+  </div>
+ </div>
