@@ -5,15 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'csv'
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'countries.csv'))
-puts csv_text
 
 User.create(username: "Tim", password_digest: "password")
 User.create(username: "Mani", password_digest: "passport")
 
 
-
+Country.create(name: "Indonesia")
+Country.create(name: "Thailand")
+Country.create(name: "Malaysia")
 
 
 Divingsite.create(name: "Sipadan Island", country_id: 1, max_depth: 30, divesiteimage_file_name: "Sipadan Island.jpg")
