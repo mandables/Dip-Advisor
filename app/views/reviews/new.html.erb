@@ -1,7 +1,8 @@
-<h1>Add a New Review</h1>
+<div class="form-group" style="margin-left: 30px; width: 200px;"><h1>Add a New Review</h1>
 <%= form_for @review, url: divingsite_reviews_path(@divingsite)  do |f| %>
   <%= f.label "Review" %>
   <%= f.text_field :content %>
-  <%= f.select :rating, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]] %>
   <%= f.submit "Submit Review"%>
 <% end %>
+
+<%= link_to 'Go back', reviews_path %>
