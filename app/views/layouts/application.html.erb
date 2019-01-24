@@ -30,7 +30,7 @@
     Countries
   </a>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    <%Country.all.each do |country| %>
+    <%Country.has_a_diving_site.each do |country| %>
     <a class="dropdown-item"  <%= link_to country.name, country_path(country) %></a>
     <% end %>
   </div>
