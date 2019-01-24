@@ -7,6 +7,10 @@ class DivingsitesController < ApplicationController
   def index
     if params[:search]
       @divingsites = Divingsite.search(params[:search]).order("created_at DESC")
+    elsif params[:order] == 'alphabetically'
+      @divingsites = Divingsite.all.order('name').order("name ASC")
+    elsif params[:order] == 'rating'
+      @divingsites = Divingsite.all.topfive
     else
       @divingsites = Divingsite.all
     end
