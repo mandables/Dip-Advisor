@@ -1,4 +1,4 @@
-<h1>Add a New Dive Site</h1>
+<div class="form-group" style="margin-left: 30px; width: 400px;"><h1>Add a New Dive Site</h1>
 <%= form_for @divingsite , html: { multipart: true } do |f| %>
   <%= f.label "Name" %>
   <%= f.text_field :name %>
@@ -10,4 +10,5 @@
   <br>
   <br>
   <%= f.submit "Create Diving Site"%>
-<% end %>
+<% end %></div>
+
