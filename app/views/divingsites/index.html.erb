@@ -1,5 +1,6 @@
-<%=link_to "Highest Rated Divingsite",  Divingsite.top %>
-<%= link_to "Order Alphabetically", divingsites_path(order: 'alphabetically') %>
+<h1><%=link_to "Highest Rated Divingsite",  Divingsite.top %></h1><br>
+
+<%= link_to "Order Alphabetically", divingsites_path(order: 'alphabetically') %><br>
 <%= link_to "Top 5", divingsites_path(order: 'rating') %>
 
 <% @divingsites.each do |site| %>

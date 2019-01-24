@@ -5,14 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'countries.csv'))
+puts csv_text
 
 User.create(username: "Tim", password_digest: "password")
 User.create(username: "Mani", password_digest: "passport")
 
 
-Country.create(name: "Indonesia")
-Country.create(name: "Thailand")
-Country.create(name: "Malaysia")
+
 
 
 Divingsite.create(name: "Sipadan Island", country_id: 1, max_depth: 30, divesiteimage_file_name: "Sipadan Island.jpg")
@@ -31,3 +32,11 @@ Review.create(content: "Cold!", rating: 1, user_id: 2, divingsite_id: 5)
 Review.create(content: "Strong currents!", rating: 1, user_id: 2, divingsite_id: 6)
 Review.create(content: "Poor visibility", rating: 1, user_id: 2, divingsite_id: 7)
 Review.create(content: "AMAZING!!", rating: 5, user_id: 2, divingsite_id: 1)
+
+Upvote.create(user_id: 1 , review_id: 8)
+Upvote.create(user_id: 1 , review_id: 7)
+Upvote.create(user_id: 1 , review_id: 6)
+Upvote.create(user_id: 1 , review_id: 5)
+Upvote.create(user_id: 2 , review_id: 1)
+Upvote.create(user_id: 2 , review_id: 2)
+Upvote.create(user_id: 2 , review_id: 3)
