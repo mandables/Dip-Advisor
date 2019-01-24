@@ -8,8 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" >Welcome to DipAdvisor</a>
+      <a style = "margin-top:-15px; margin-bottom:-15px ; margin-left:-50px;margin-right:-50px;">  <img src="../assets/Slide1.png" width = "200"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,9 +30,9 @@
     Countries
   </a>
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    <a class="dropdown-item" href="/countries/1">Malaysia</a>
-    <a class="dropdown-item" href="/countries/2">Thailand</a>
-    <a class="dropdown-item" href="/countries/3">Indonesia</a>
+    <%Country.has_a_diving_site.each do |country| %>
+    <a class="dropdown-item"  <%= link_to country.name, country_path(country) %></a>
+    <% end %>
   </div>
 </li>
 <%= form_tag(divingsites_path, :method => "get", id: "search-form") do %>

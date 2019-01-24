@@ -1,0 +1,8 @@
+<%= @user.username %>
+<br>
+Number of Reviews: <%= @user.num_of_reviews %>
+<% @reviews.each do |review|  %>
+<li>
+<%= link_to review.content[0..5]+"...", divingsite_path %>
+</li>
+<% end %>

@@ -1,20 +1,16 @@
-<h1> <%= @divingsite.name %> </h1>
+<h1> <%= @divingsite.name %> </h1><%=link_to "Add a Review", new_divingsite_review_path(@divingsite) %>
 <%= image_tag @divingsite.divesiteimage.url, width: 400, :crop => "pad" %>
 
 <% @reviews.each do |review| %>
-
+<li>
 <%= review.content %>
-<br> <br>
 <%=hidden_field_tag :review_id, review.id%>
-<%# <%= link_to "Upvote", divingsite_review_like_path(review), method: :put do %>
-<%# <%= review.get_upvotes.size %>
 
 <%= link_to divingsite_review_like_path(review.divingsite, review), class: "like", method: :put do %>
     <button type="button" class="btn btn-info" aria-label="Left Align">
     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
     <span class="badge"> <%= review.get_upvotes.size %> </span>
     </button>
-    <% end %> 
-
-
+    <% end %>
+    </li>
 <% end %>

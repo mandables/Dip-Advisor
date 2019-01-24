@@ -13,9 +13,13 @@ class Divingsite < ApplicationRecord
 
   def rating_average
     review_ratings = []
+    if self.reviews.count == 0
+      return 0
+    else
     self.reviews.each do |review|
       review_ratings << review.rating
     end
+  end
     review_ratings.inject(0.0) { |sum, el| sum + el } / review_ratings.size
   end
 
