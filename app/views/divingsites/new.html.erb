@@ -1,13 +1,16 @@
-<div class="form-group" style="margin-left: 30px; width: 400px;"><h1>Add a New Dive Site</h1>
+<div class="ds-box" style="margin-left: 30px; width: 400px;"><h2>Add a New Dive Site</h2>
 <%= form_for @divingsite , html: { multipart: true, class: "links" } do |f| %>
   <%= f.label "Name" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control" %>
   <%= f.label "Max Depth:" %>
-  <%= f.text_field :max_depth, placeholder: "in feet" %>
+  <%= f.text_field :max_depth, placeholder: "in feet", class: "form-control" %>
+  <br>
   <%= f.label "Select Country" %>
-  <%= f.collection_select :country_id, Country.order("name ASC").all, :id, :name %>
+  <%= f.collection_select :country_id, Country.order("name ASC").all, :id, :name, class: "form-control" %>
   <%= f.file_field :divesiteimage %>
   <br>
   <br>
-  <%= f.submit "Create Diving Site"%>
-<% end %></div>
+  <%= f.submit "Create Diving Site", style:"margin:auto"%>
+  </div>
+<% end %>
+

@@ -1,11 +1,16 @@
+<h1>Login</h1>
+<div class="signup-box">
 <%= form_for @user, url: login_path, method: :post do |f| %>
+<br>
+<br>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <%= f.label :password %>
     <%= f.password_field :password %>
 
-    <%= f.submit 'Log in' %>
+    <%= f.submit 'Login' %>
 <% end %>
 
 <%= session[:username] %>
 <%= params %>
+</div>
