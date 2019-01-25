@@ -1,12 +1,12 @@
 <h1> <%= @divingsite.name %> </h1>
-<h3><%= @divingsite.rating_average %>⭐</h3>
+<h3><%= @divingsite.rating_average.round(2) %>⭐</h3>
 <%= image_tag @divingsite.divesiteimage.url, width: 400, :crop => "pad" %>
 <br>
 <%= link_to "Add a Review", new_divingsite_review_path(@divingsite), style: "color: white" %>
 
 <% @reviews.each do |review| %>
   <div class="media reviews">
-    <%= image_tag review.user.profilepic.url, class: "mr-3" %>
+    <%= image_tag review.user.profilepic.url, class: "mr-3", width: 50, :crop => "pad" %>
     <div class="media-body">
       <h5 class="mt-0"><%= review.user.username %></h5>
       <%= review.content %>

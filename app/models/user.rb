@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :upvotes
   has_secure_password
   acts_as_voter
+  validates :username, uniqueness: true 
 
   def num_of_reviews
     self.reviews.count

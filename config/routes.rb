@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :upvotes
   resources :countries
-  resources :divingsites
+  get '/users/:id', to: 'users#show', as: 'user'
   resources :divingsites do
     put "like" => "divingsites#upvote"
   end
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     get '/signup', to: 'users#new', as: 'signup'
     post '/signup', to: 'users#create'
-    get '/users/:id', to: 'users#show', as: 'user'
+
 
     # sessions management
     get '/login', to: 'sessions#new', as: 'login'

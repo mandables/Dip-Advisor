@@ -20,7 +20,6 @@ class Divingsite < ApplicationRecord
       review_ratings << review.rating
     end
   end
-
     review_ratings.inject(0.0) { |sum, el| sum + el } / review_ratings.size
   end
 
