@@ -1,15 +1,15 @@
 <h1 align="center"> <img src="../assets/Slide1.png" width = "200" style = "border-style: none">
 <br> Welcome to Dipadvisor</h1>
-<h2 align="center"style = "margin-top:; margin-bottom: ; margin-left:;margin-right:;"> Login or click <%= link_to "Signup", new_user_path %> here to register <h2>
+<h2 align="center"style = "margin-top:; margin-bottom: ; margin-left:;margin-right:;"> Login or click <%= link_to "Signup", signup_path %> here to register
   <br>
-<%= form_for @user, url: login_path, method: :post do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.submit 'Log in' %>
-<% end %>
+  <br>
+  <%= form_tag sessions_path do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <%= submit_tag 'login' %>
+  <% end %><h2>
 
 <%session[:username] %>
 <%params %>

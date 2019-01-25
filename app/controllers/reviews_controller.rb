@@ -8,15 +8,15 @@ class ReviewsController < ApplicationController
     @divingsite = Divingsite.find(params[:divingsite_id])
     @review = @divingsite.reviews.create(review_params)
     @review.divingsite_id = @divingsite.id
-    @review.user = User.find_by(username: current_user)
+    @review.user = current_user
     @review.save
-    redirect_to @divingsite
+    redirect_to divingsite_path(@divingsite)
   end
 
   def upvote
 
     @review = Review.find(params[:review_id])
-    @review.upvote_by User.find_by(username: current_user)
+    @review.upvote_by current_user
     redirect_to @review.divingsite
   end
 

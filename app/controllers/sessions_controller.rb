@@ -4,20 +4,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username])
-
-    if @user && @user.authenticate(params[:user][:password])
-      session[:username] = @user.username
-      #change redirect to homepage?
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to divingsites_path
     else
+      flash[:errors] = ["invalid username or password"]
+  
       redirect_to login_path
-      #look at using flash message to show errors
     end
   end
 
   def destroy
-    session.delete :username
-    redirect_to "root"
+    session[:user_id] = nil
+    redirect_to login_path
   end
 end

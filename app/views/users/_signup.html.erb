@@ -1,7 +1,7 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
+<%= form_for @user, :url => "/signup", html: { multipart: true } do |f| %>
 
         <div class="signup-box">
-        
+
         <br>
         <%= f.label :username %>
         <%= f.text_field :username, class: "form-control" %>
