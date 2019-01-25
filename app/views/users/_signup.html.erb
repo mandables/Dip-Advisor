@@ -1,8 +1,8 @@
 <%= form_for @user, html: { multipart: true } do |f| %>
 
-        <div class=""></div>
-        Upload a Profile Picture
-        <%= f.file_field :profilepic %>
+        <div class="signup-box">
+        
+        <br>
         <%= f.label :username %>
         <%= f.text_field :username, class: "form-control" %>
 
@@ -13,8 +13,12 @@
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
+        <br>
+        Upload a Profile Picture <br>
+        <%= f.file_field :profilepic %>
         <br> <br>
         <button type="submit" class="btn btn-primary">Create user</button>
+        </div>
 
 
 <% end %>
