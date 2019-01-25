@@ -25,6 +25,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/divingsites/new">Add a Dive Site</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="users/<%=current_user.id %>">My Profile</a>
+          </li>
           <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Countries
@@ -41,18 +44,20 @@
 <% end %>
         </ul>
       </div>
-      <form class="form-inline">
-        <a class="btn btn-info btn-lg" href="/login" role="button">
-        Login
-        </a>
-        <div style="padding-left: 10px;">
-          <a class="glyphicon glyphicon-log-out" href="/logout" role="button">
-          Logout
-          </a>
-        </div>
+        <form class="form-inline">
+           <% if !logged_in? %>
+      <%= link_to 'log in', login_path, class: "btn btn-success" %>
+      <%= link_to 'sign up', signup_path, class: "btn btn-info"  %>
+    <% else %>
+      <%= link_to "log out", logout_path, class: "btn btn-danger" , method: "post" %>
+      <%= 'Signed in as:' + current_user.username%>
+    <% end %>
+
         <br>
       </form>
     </nav>
+
+
 
 
   <body>

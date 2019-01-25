@@ -4,11 +4,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to login_path
+    @user = User.new(user_params)
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to divingsites_path
+    else
+      redirect_to signup_path
+    end
   end
 
   def show
+    authorized_for(params[:id])
     @user = User.find(params[:id])
     @reviews = @user.reviews
   end

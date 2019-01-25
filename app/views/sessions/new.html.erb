@@ -1,3 +1,11 @@
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error_text| %>
+      <li>
+        <%= error_text %>
+      </li>
+    <% end %>
+    <% end %>
 <h1>Login</h1>
 <div class="signup-box">
 <%= form_for @user, url: login_path, method: :post do |f| %>
@@ -14,3 +22,4 @@
 <%= session[:username] %>
 <%= params %>
 </div>
+
