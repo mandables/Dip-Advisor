@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:username] = @user.username
       #change redirect to homepage?
-      redirect_to login_path
+      redirect_to divingsites_path
     else
       redirect_to login_path
       #look at using flash message to show errors
