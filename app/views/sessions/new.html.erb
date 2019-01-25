@@ -1,11 +1,15 @@
-<%= form_for @user, url: login_path, method: :post do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.submit 'Log in' %>
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error_text| %>
+      <li>
+        <%= error_text %>
+      </li>
+    <% end %>
+    <% end %>
+<%= form_tag sessions_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag 'login' %>
 <% end %>
-
-<%= session[:username] %>
-<%= params %>
