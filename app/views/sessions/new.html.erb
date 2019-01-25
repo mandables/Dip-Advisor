@@ -6,10 +6,20 @@
       </li>
     <% end %>
     <% end %>
-<%= form_tag sessions_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag 'login' %>
+<h1>Login</h1>
+<div class="signup-box">
+<%= form_for @user, url: login_path, method: :post do |f| %>
+<br>
+<br>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit 'Login' %>
 <% end %>
+
+<%= session[:username] %>
+<%= params %>
+</div>
+
