@@ -3,14 +3,20 @@
 
 <% @reviews.each do |review| %>
 <li>
+<div class="media">
+    <%# <%= image_tag review.user.profilepic.url %> %>
+    <div class="media-body">
+    <h5 class="mt-0"><%= review.user.username%></h5>
 <%= review.content %>
 <%=hidden_field_tag :review_id, review.id%>
 
 <%= link_to divingsite_review_like_path(review.divingsite, review), class: "like", method: :put do %>
     <button type="button" class="btn btn-info" aria-label="Left Align">
     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-    <span class="badge"> <%= review.get_upvotes.size %> </span>
+    <span class="badge"> <%= review.votes_for.size %> </span>
     </button>
     <% end %>
     </li>
+        </div>
+    </div>
 <% end %>
