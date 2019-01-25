@@ -1,22 +1,23 @@
 <h1> <%= @divingsite.name %> </h1>
+<h3><%= @divingsite.rating_average %>⭐</h3>
 <%= image_tag @divingsite.divesiteimage.url, width: 400, :crop => "pad" %>
 <br>
-<%=link_to "Add a Review", new_divingsite_review_path(@divingsite) %>
+<%= link_to "Add a Review", new_divingsite_review_path(@divingsite), style: "color: white" %>
 
 <% @reviews.each do |review| %>
-<div class="media, reviews">
+  <div class="media reviews">
     <%= image_tag review.user.profilepic.url, class: "mr-3" %>
     <div class="media-body">
-    <h5 class="mt-0"><%= review.user.username %></h5>
-<%= review.content %>
-<%=hidden_field_tag :review_id, review.id%>
-
-<%= link_to divingsite_review_like_path(review.divingsite, review), class: "like", method: :put do %>
-    <button type="button" class="btn btn-info" aria-label="Left Align">
-    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-    <span class="badge"> <%= review.votes_for.size %> </span>
-    </button>
-    <% end %>
-        </div>
+      <h5 class="mt-0"><%= review.user.username %></h5>
+      <%= review.content %>
+      <%=hidden_field_tag :review_id, review.id%>
+      <%= link_to divingsite_review_like_path(review.divingsite, review), class: "like", method: :put do %>
+        <button type="button" class="btn btn-info margin" aria-label="Left Align">
+          <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+          <span class="badge"> <%= review.votes_for.size %></span>
+        </button>
+      <% end %>
+      <br>
     </div>
+  </div>
 <% end %>
