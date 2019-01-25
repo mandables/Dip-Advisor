@@ -1,12 +1,13 @@
-<h1> <%= @divingsite.name %> </h1><%=link_to "Add a Review", new_divingsite_review_path(@divingsite) %>
+<h1> <%= @divingsite.name %> </h1>
 <%= image_tag @divingsite.divesiteimage.url, width: 400, :crop => "pad" %>
+<br>
+<%=link_to "Add a Review", new_divingsite_review_path(@divingsite) %>
 
 <% @reviews.each do |review| %>
-<li>
-<div class="media">
-    <%# <%= image_tag review.user.profilepic.url %> %>
+<div class="media, reviews">
+    <%= image_tag review.user.profilepic.url, class: "mr-3" %>
     <div class="media-body">
-    <h5 class="mt-0"><%= review.user.username%></h5>
+    <h5 class="mt-0"><%= review.user.username %></h5>
 <%= review.content %>
 <%=hidden_field_tag :review_id, review.id%>
 
@@ -16,7 +17,6 @@
     <span class="badge"> <%= review.votes_for.size %> </span>
     </button>
     <% end %>
-    </li>
         </div>
     </div>
 <% end %>
