@@ -47,6 +47,12 @@ body {
   background-size: cover;
 }
 
+.login-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .links {
   color: black;
 }
@@ -82,12 +88,11 @@ img {
 }
 
 .signup-box {
-  box-sizing: border-box;
-  background-color: rgba(236, 236, 236, 1);
+  //   box-sizing: border-box;
+  background-color: rgba(236, 236, 236, 0.9);
   padding-left: 10px;
-  padding-right: 10px;
   padding-bottom: 10px;
-  width: 600px;
+  width: 300px;
   border-radius: 5px;
 }
 
