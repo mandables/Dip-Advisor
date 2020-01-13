@@ -1,15 +1,18 @@
-<h1 align="center"> <img src="../assets/Slide1.png" width = "200" style = "border-style: none">
-<br> Welcome to Dipadvisor</h1>
-<h2 align="center"style = "margin-top:; margin-bottom: ; margin-left:;margin-right:;"> Login or click <%= link_to "Signup", signup_path %> here to register
-  <br>
-  <br>
-  <%= form_tag sessions_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag 'login' %>
-  <% end %><h2>
+<div class="welcome-page">
+  <h1 align="center"> <img src="../assets/Slide1.png" width = "200" style = "border-style: none">
+  <br> Welcome to Dipadvisor</h1>
+  <h2 align="center"style = "margin-top:; margin-bottom: ; margin-left:;margin-right:;"> Login or click <%= link_to "Signup", signup_path %> here to register
+    <br>
+    <br>
+    <%= form_tag sessions_path do %>
+      <%= label_tag :username %>
+      <%= text_field_tag :username %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag 'login' %>
+    <% end %><h2>
 
-<%session[:username] %>
-<%params %>
+  <%session[:username] %>
+  <%params %>
+
+</div>
