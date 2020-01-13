@@ -1,24 +1,20 @@
+<div class="ds-index">
+  <div class="filter">
+    <%# <%=link_to "Highest Rated Divingsite",  Divingsite.top %>
+    <h5>Sort</h5
+    <br>
+    <%= link_to "Alphabetically", divingsites_path(order: 'alphabetically'), class: "sort-btn" %>
+    <%= link_to "Default", divingsites_path, class: "sort-btn" %>
+  </div>
 
-<h1><%=link_to "Highest Rated Divingsite",  Divingsite.top %></h1><br>
-
-<%= link_to "Order Alphabetically", divingsites_path(order: 'alphabetically') %><br>
-<%= link_to "Top 5", divingsites_path(order: 'rating') %>
 <br> <br>
 
-  <div class="card-columns">
-  <% @divingsites.each do |site| %>
-
-
-
-        <div class="card" style="width: 18rem;">
-
-        <div class="card-body, index-img">
-        <h5 class="card-title"><%= link_to site.name, divingsite_path(site) %></h5>
-        <%= image_tag site.divesiteimage.url, width: 200, :crop => "pad", class: "card-img-top"%>
-             </div>
-          </div>
-          <br>
-        <%# </div> %>
+  <div class="cards">
+    <% @divingsites.each do |site| %>
+         <div class="site-card">
+          <h5 class="card-title"><%= link_to site.name, divingsite_path(site) %></h5>
+          <%= image_tag site.divesiteimage.url, :crop => "pad", class: "site-img"%>
+        </div>
      
 
 
@@ -30,9 +26,7 @@
     <span class="badge">  site.get_upvotes.size </span>
     </button> -->
       <!-- end  -->
-<% end %>
-</div>
-<%# </div>
-    </div>
+    <% end %>
   </div>
- </div> %>
+</div>
+
