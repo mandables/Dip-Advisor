@@ -1,4 +1,4 @@
-<div>
+<div class="login-page">
  <% if flash[:errors] %>
   <ul>
     <% flash[:errors].each do |error_text| %>
@@ -13,10 +13,13 @@
     <br>
     <br>
     <%= f.label :username %>
+    <br>
     <%= f.text_field :username %>
     <br>
     <%= f.label :password %> 
+     <br>
     <%= f.password_field :password %>
+    <br>
     <br>
     <%= f.submit 'Login' %>
 <% end %>

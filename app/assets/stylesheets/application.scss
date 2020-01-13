@@ -22,12 +22,7 @@ $screen-mobile: 450px;
 $screen-tablet: 768px;
 
 // Color pallete
-$main-purple: #34314c;
-$background-yellow: #ffc952;
-$background-orange: #ff7473;
-$background-blue: #47b8e0;
-$background-light: #eee8da;
-$background-light-hover: #cfcabc;
+$box-background: rgba(236, 236, 236, 0.9);
 
 // Fonts
 $light-font: #eee8da;
@@ -45,6 +40,16 @@ $font-bold: 600;
 body {
   background-image: url(https://images.unsplash.com/photo-1535117148547-3afcca37afd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
   background-size: cover;
+}
+
+.welcome-page {
+  background-color: $box-background;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .links {
@@ -82,12 +87,11 @@ img {
 }
 
 .signup-box {
-  box-sizing: border-box;
-  background-color: rgba(236, 236, 236, 1);
+  //   box-sizing: border-box;
+  background-color: $box-background;
   padding-left: 10px;
-  padding-right: 10px;
   padding-bottom: 10px;
-  width: 600px;
+  width: 300px;
   border-radius: 5px;
 }
 
