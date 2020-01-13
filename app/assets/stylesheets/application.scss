@@ -42,19 +42,52 @@ $font-light: 200;
 $font-medium: 400;
 $font-bold: 600;
 
+html,
 body {
-  background-image: url(https://images.unsplash.com/photo-1535117148547-3afcca37afd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
+  background: url(https://images.unsplash.com/photo-1535117148547-3afcca37afd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+}
+
+.welcome-main {
+  text-align: center;
+  background-color: rgba($color: #b0acac, $alpha: 0.5);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cards {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.site-card {
+  flex: 0 1 calc(25% - 1em);
+}
+
+.site-img {
+  width: 17em;
+  height: 12em;
 }
 
 .links {
   color: black;
 }
 
-img {
-  background-color: rgba(215, 245, 255, 0.2);
-  border: 1px solid #021a40;
-}
+// img {
+//   background-color: rgba(215, 245, 255, 0.2);
+//   border: 1px solid #021a40;
+// }
 
 .index-img {
 }

@@ -1,15 +1,19 @@
-<h1 align="center"> <img src="../assets/Slide1.png" width = "200" style = "border-style: none">
-<br> Welcome to Dipadvisor</h1>
-<h2 align="center"style = "margin-top:; margin-bottom: ; margin-left:;margin-right:;"> Login or click <%= link_to "Signup", signup_path %> here to register
-  <br>
-  <br>
-  <%= form_tag sessions_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag 'login' %>
-  <% end %><h2>
+<div class="welcome-main">
+  <h1 align="center"> <img src="../assets/Slide1.png" width = "200" >
+  <br> Welcome to Dipadvisor</h1>
+  <h2>
+    Top sites
+  </h2>
+  <div class="cards">
+    <% @diving_sites.each do |site| %>
+        <div class="site-card">
+          <h5 class="card-title"><%= link_to site.name, divingsite_path(site) %></h5>
+          <%= image_tag site.divesiteimage.url, :crop => "pad", class: "site-img"%>
+        </div>
+   
+    <% end %>
+  </div>
+  <h3><%= link_to "All-sites", divingsites_path %></h3>
+</div>
 
-<%session[:username] %>
-<%params %>
+

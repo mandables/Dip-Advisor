@@ -29,8 +29,8 @@ class Divingsite < ApplicationRecord
     end
   end
 
-  def self.topfive
-    Divingsite.all.max_by(5) do |divingsite|
+  def self.topthree
+      Divingsite.all.max_by(3) do |divingsite|
       divingsite.rating_average
     end
   end
